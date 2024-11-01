@@ -16,7 +16,7 @@ li {
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   height: 100vh;
 }
 
@@ -30,13 +30,14 @@ body {
 .sidebar {
   grid-row: span 5 / span 5;
   border: 1px solid gray;
+  padding: 30px 20px;
 }
 
 .main-content {
   grid-column: span 4 / span 4;
   grid-row: span 5 / span 5;
   border: 1px solid gray;
-  padding: 20px;
+  padding: 30px 20px;
 
   display: flex;
   gap: 15px;
@@ -59,3 +60,42 @@ body {
 .book-header {}
 
 .book-footer {}
+
+.add-book-form input[type="text"],
+.add-book-form input[type="number"] {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.add-book-form .title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.add-book-form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.add-book-form .input-group-checkbox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
