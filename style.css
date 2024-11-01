@@ -48,4 +48,14 @@ body {
   height: 300px;
   border: 1px solid black;
   border-radius: 20px;
+  padding: 40px 10px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.book-header {}
+
+.book-footer {}
