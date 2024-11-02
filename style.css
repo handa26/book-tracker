@@ -49,7 +49,7 @@ body {
   height: 300px;
   border: 1px solid black;
   border-radius: 20px;
-  padding: 40px 10px;
+  padding: 20px 10px;
   text-align: center;
 
   display: flex;
@@ -60,6 +60,36 @@ body {
 .book-header {}
 
 .book-footer {}
+
+.book-footer .btn-remove {
+  border: 0;
+  width: 40%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: tomato;
+  border-radius: 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.book-footer .btn-isread {
+  border: 0;
+  width: 40%;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn-isread-true {
+  background-color: tomato;
+}
+
+.btn-isread-false {
+  background-color: #4CAF50;
+}
 
 .add-book-form input[type="text"],
 .add-book-form input[type="number"] {

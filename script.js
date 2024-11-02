@@ -30,7 +30,7 @@ function addBookToLibrary() {
 }
 
 function displayBooks() {
-  myLibrary.map((book) => {
+  myLibrary.map((book, index) => {
     const bookItem = document.createElement("div");
     const header = document.createElement("div");
     const footer = document.createElement("div");
@@ -38,20 +38,29 @@ function displayBooks() {
     const author = document.createElement("p");
     const pages = document.createElement("p");
     const isRead = document.createElement("p");
+    const btnRemove = document.createElement("button");
+    const btnIsRead = document.createElement("button");
     
     bookItem.classList.add("book");
     header.classList.add("book-header");
     footer.classList.add("book-footer");
+    btnRemove.classList.add("btn-remove");
+    btnRemove.setAttribute("data-id", index);
+    btnIsRead.className = `${book.read ? "btn-isread btn-isread-true" : "btn-isread btn-isread-false"}`;
 
     title.innerText = book.title;
     author.innerText = `by ${book.author}`;
     pages.innerText = `${book.pages} pages`;
     isRead.innerText = `${book.read ? "Read" : "Not Read Yet"}`;
+    btnRemove.innerText = "Remove";
+    btnIsRead.innerText = `${book.read ? "Unread" : "Read"}`
 
     header.append(title);
     header.append(author);
     footer.append(pages);
     footer.append(isRead);
+    footer.append(btnRemove);
+    footer.append(btnIsRead);
 
     bookItem.append(header);
     bookItem.append(footer);
