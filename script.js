@@ -1,4 +1,9 @@
 const mainContent = document.querySelector("#main-content");
+const form = document.getElementById("form");
+const author = document.getElementById("author");
+const title = document.getElementById("title");
+const pages = document.getElementById("pages");
+const read = document.getElementById("read");
 
 const myLibrary = [
   {
@@ -20,16 +25,21 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function() {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-  }
 }
 
 function addBookToLibrary() {
-  
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const newBook = new Book(author.value, title.value, parseInt(pages.value), read.checked);
+    myLibrary.push(JSON.parse(JSON.stringify(newBook)));
+    displayBooks();
+  });
 }
 
 function displayBooks() {
+  mainContent.innerHTML = "";
+
   myLibrary.map((book, index) => {
     const bookItem = document.createElement("div");
     const header = document.createElement("div");
@@ -69,3 +79,4 @@ function displayBooks() {
 }
 
 displayBooks();
+addBookToLibrary();
