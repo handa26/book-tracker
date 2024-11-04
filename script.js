@@ -32,9 +32,21 @@ function addBookToLibrary() {
     e.preventDefault();
 
     const newBook = new Book(author.value, title.value, parseInt(pages.value), read.checked);
+    if (author.value === "" || title.value === "" || pages.value === "") {
+      alert("Please fill all input fields.");
+      return;
+    }
     myLibrary.push(JSON.parse(JSON.stringify(newBook)));
+    resetForm();
     displayBooks();
   });
+}
+
+function resetForm() {
+  author.value = "";
+  title.value = "";
+  pages.value = "";
+  read.checked = false;
 }
 
 function displayBooks() {
