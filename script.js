@@ -4,6 +4,7 @@ const author = document.getElementById("author");
 const title = document.getElementById("title");
 const pages = document.getElementById("pages");
 const read = document.getElementById("read");
+let btnRemoves;
 
 const myLibrary = [
   {
@@ -88,6 +89,15 @@ function displayBooks() {
     bookItem.append(footer);
     mainContent.append(bookItem);
   });
+
+  btnRemoves = document.querySelectorAll(".btn-remove");
+  
+  btnRemoves.forEach((btn) => btn.addEventListener("click", () => {
+    const index = btn.getAttribute("data-id");
+    myLibrary.splice(index, 1);
+    displayBooks();
+  }));
+  
 }
 
 displayBooks();
