@@ -5,6 +5,7 @@ const title = document.getElementById("title");
 const pages = document.getElementById("pages");
 const read = document.getElementById("read");
 let btnRemoves;
+let btnIsReads;
 
 const myLibrary = [
   {
@@ -70,6 +71,7 @@ function displayBooks() {
     btnRemove.classList.add("btn-remove");
     btnRemove.setAttribute("data-id", index);
     btnIsRead.className = `${book.read ? "btn-isread btn-isread-true" : "btn-isread btn-isread-false"}`;
+    btnIsRead.setAttribute("data-id", index);
 
     title.innerText = book.title;
     author.innerText = `by ${book.author}`;
@@ -91,6 +93,7 @@ function displayBooks() {
   });
 
   btnRemoves = document.querySelectorAll(".btn-remove");
+  btnIsReads = document.querySelectorAll(".btn-isread");
   
   btnRemoves.forEach((btn) => btn.addEventListener("click", () => {
     const confirmation = confirm("Do you want to delete this book?");
@@ -101,7 +104,16 @@ function displayBooks() {
       displayBooks();
     }
   }));
-  
+
+  btnIsReads.forEach((btn) => btn.addEventListener("click", () => {
+    const index = btn.getAttribute("data-id");
+    const confirmation = confirm(`Do you want to mark this book as ${myLibrary[index].read ? "UNREAD" : "READ"}?`);
+
+    if (confirmation) {
+      myLibrary[index].read = !myLibrary[index].read;
+      displayBooks();
+    }
+  }));
 }
 
 displayBooks();
