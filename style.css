@@ -59,7 +59,12 @@ body {
 
 .book-header {}
 
-.book-footer {}
+.book-footer {
+}
+
+.book-footer p {
+  margin-bottom: 12px;
+}
 
 .book-footer .btn-remove {
   border: 0;
@@ -84,11 +89,11 @@ body {
 }
 
 .btn-isread-true {
-  background-color: tomato;
+  background-color: #4CAF50;
 }
 
 .btn-isread-false {
-  background-color: #4CAF50;
+  background-color: tomato;
 }
 
 .add-book-form input[type="text"],

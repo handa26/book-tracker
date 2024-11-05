@@ -73,14 +73,14 @@ function displayBooks() {
     title.innerText = book.title;
     author.innerText = `by ${book.author}`;
     pages.innerText = `${book.pages} pages`;
-    isRead.innerText = `${book.read ? "Read" : "Not Read Yet"}`;
+    // isRead.innerText = `${book.read ? "Read" : "Not Read Yet"}`;
     btnRemove.innerText = "Remove";
-    btnIsRead.innerText = `${book.read ? "Unread" : "Read"}`
+    btnIsRead.innerText = `${book.read ? "Read" : "Unread"}`
 
     header.append(title);
     header.append(author);
     footer.append(pages);
-    footer.append(isRead);
+    // footer.append(isRead);
     footer.append(btnRemove);
     footer.append(btnIsRead);
 
