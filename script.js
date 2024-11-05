@@ -51,6 +51,15 @@ function resetForm() {
   read.checked = false;
 }
 
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 function displayBooks() {
   mainContent.innerHTML = "";
 
@@ -72,6 +81,7 @@ function displayBooks() {
     btnRemove.setAttribute("data-id", index);
     btnIsRead.className = `${book.read ? "btn-isread btn-isread-true" : "btn-isread btn-isread-false"}`;
     btnIsRead.setAttribute("data-id", index);
+    bookItem.style.borderLeft = `5px solid ${getRandomColor()}`;
 
     title.innerText = book.title;
     author.innerText = `by ${book.author}`;
