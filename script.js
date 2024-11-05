@@ -93,9 +93,13 @@ function displayBooks() {
   btnRemoves = document.querySelectorAll(".btn-remove");
   
   btnRemoves.forEach((btn) => btn.addEventListener("click", () => {
+    const confirmation = confirm("Do you want to delete this book?");
     const index = btn.getAttribute("data-id");
-    myLibrary.splice(index, 1);
-    displayBooks();
+
+    if (confirmation) {
+      myLibrary.splice(index, 1);
+      displayBooks();
+    }
   }));
   
 }
