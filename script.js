@@ -31,7 +31,7 @@ function addBookToLibrary() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const newBook = new Book(author.value, title.value, parseInt(pages.value), read.checked);
+    const newBook = new Book(title.value, author.value, parseInt(pages.value), read.checked);
     if (author.value === "" || title.value === "" || pages.value === "") {
       alert("Please fill all input fields.");
       return;
